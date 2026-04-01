@@ -35,6 +35,8 @@ After reviewing the skeleton, I added a `task_id` to Task and updated Planner.ed
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
 
+My scheduler only checks for exact time collisions (same scheduled time), not overlapping durations. This keeps the logic simple and easy to explain early in the project, and it is sufficient for a basic daily routine where tasks are short and usually non-overlapping by design.
+
 ---
 
 ## 3. AI Collaboration
