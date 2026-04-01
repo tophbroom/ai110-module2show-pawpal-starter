@@ -30,6 +30,18 @@ The current implementation adds lightweight scheduling intelligence:
 - Recurring daily and weekly tasks automatically create their next occurrence.
 - Simple conflict detection warns when multiple tasks share the same time.
 
+## Testing PawPal+
+
+Run the test suite:
+
+```bash
+python -m pytest
+```
+
+The tests cover task completion, task sorting, recurring task creation, and conflict detection.
+
+Confidence level: 4/5
+
 ## Getting started
 
 ### Setup
