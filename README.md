@@ -25,10 +25,22 @@ Your final app should:
 ## Smarter Scheduling
 
 The current implementation adds lightweight scheduling intelligence:
+
 - Tasks are sorted by time for a daily plan.
 - Tasks can be filtered by pet, date, or completion status.
 - Recurring daily and weekly tasks automatically create their next occurrence.
 - Simple conflict detection warns when multiple tasks share the same time.
+
+## Features
+
+- Sorts tasks by scheduled time for a daily plan.
+- Filters tasks by pet, date, and completion status.
+- Creates next occurrences for daily and weekly tasks.
+- Detects time conflicts and surfaces warnings.
+
+## 📸 Demo
+
+<a href="/course_images/ai110/image.png" target="_blank"><img src='/course_images/ai110/image.png' title='PawPal App' width='' alt='PawPal App' class='center-block' /></a>
 
 ## Testing PawPal+
 

@@ -1,0 +1,51 @@
+classDiagram
+    class Owner {
+        +name: str
+        +pets: List[Pet]
+        +preferences: List[str]
+        +time_available_minutes: Optional[int]
+        +add_pet(pet: Pet) void
+        +remove_pet(pet_name: str) void
+        +get_all_tasks() List[Task]
+        +get_tasks_for_date(for_date: date) List[Task]
+        +find_pet(pet_name: str) Optional[Pet]
+    }
+
+    class Pet {
+        +name: str
+        +species: str
+        +age_years: int
+        +tasks: List[Task]
+        +notes: Optional[str]
+        +add_task(task: Task) void
+        +remove_task(description: str) void
+        +list_tasks() List[Task]
+        +tasks_for_date(for_date: date) List[Task]
+    }
+
+    class Task {
+        +description: str
+        +scheduled_time: time
+        +frequency: str
+        +due_date: date
+        +is_complete: bool
+        +notes: Optional[str]
+        +mark_complete() void
+        +mark_incomplete() void
+        +format_for_schedule() str
+        +next_occurrence() Optional[Task]
+    }
+
+    class Scheduler {
+        +owner: Owner
+        +get_all_tasks() List[Task]
+        +sort_by_time(tasks: List[Task]) List[Task]
+        +filter_tasks(pet_name: Optional[str], status: Optional[str], for_date: Optional[date]) List[Task]
+        +build_daily_schedule(for_date: Optional[date]) List[Task]
+        +detect_conflicts(tasks: List[Task]) List[str]
+        +mark_task_complete(pet_name: str, description: str) Optional[Task]
+    }
+
+    Owner "1" o-- "*" Pet : has
+    Pet "1" o-- "*" Task : has
+    Scheduler "1" --> "1" Owner : plans for
