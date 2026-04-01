@@ -7,10 +7,19 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+I started with four classes that mirror the core workflow. Owner stores the user's profile, time availability, and preferences plus their list of pets. Pet stores basic pet profile data used for planning. Task represents a single care item with duration, priority, and due date information. Planner owns the list of tasks and is responsible for adding/editing tasks and generating a daily plan for the owner.
+
+Core user actions for PawPal+:
+- Enter basic owner and pet info.
+- Add or edit care tasks with duration and priority.
+- Generate and view a daily plan that explains why tasks were scheduled.
+
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+
+After reviewing the skeleton, I added a `task_id` to Task and updated Planner.edit_task to use that id instead of title. This avoids ambiguity when multiple tasks share the same name. I also added an optional `pet_name` on Task so each task can be tied to a specific pet, which makes the scheduling logic clearer.
 
 ---
 
